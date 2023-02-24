@@ -14,7 +14,8 @@ Vue.use(exportDefaultObject)
 import say from '@/plugins/say.js'
 Vue.use(say)
 
-import '@/utils/isProxy'
+// vue3响应式原理
+// import '@/utils/isProxy'
 
 new Vue({
   router,

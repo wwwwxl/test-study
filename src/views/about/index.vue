@@ -23,6 +23,10 @@
 </template>
 <script>
 	export default{
+		routesMeta: {
+			title: '关于',
+			keepAlive: true
+		},
 		data() {
 			return {}
 		},
