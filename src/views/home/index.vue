@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import SymbolIterator from "@/components/SymbolIterator.vue";
 import homeView from "@/mixins/homeView";
 
 export default {
@@ -15,7 +15,7 @@ export default {
 			keepAlive: true
 	},
   components: {
-    HelloWorld,
+    SymbolIterator,
   },
   mixins: [homeView],
   data() {

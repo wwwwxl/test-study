@@ -6,7 +6,7 @@ import store from "./store";
 Vue.config.productionTip = false;
 
 // 只要在index.js里规定了install方法，就可以向其他ui组件库那样，使用Vue.use()来全局使用
-import exportDefaultObject from '@/components/index.js'
+import exportDefaultObject from '@/components/TestVueUse.js'
 Vue.use(exportDefaultObject)
 
 // import objectPrototype from '@/utils/objectPrototype.js'
@@ -16,6 +16,9 @@ Vue.use(say)
 
 // vue3响应式原理
 // import '@/utils/isProxy'
+
+// ant-design-vue按需引入
+import '@/components/antDesign.js'
 
 new Vue({
   router,

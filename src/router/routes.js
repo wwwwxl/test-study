@@ -41,7 +41,7 @@ Object.keys(pages).forEach(item => {
   generator.push({
       path: `/${Rpath}`,
       name: Rpath,
-      meta: pages[item].routesMeta,
+      meta: pages[item].routesMeta || {title: '',keepAlive: false},
       component: pages[item]
   })
 });
@@ -49,5 +49,5 @@ Object.keys(pages).forEach(item => {
 const routes = [
  ...initRoutes,...generator
 ];
-// console.log('======routes', routes)
+console.log('======routes======', routes)
 export default routes;

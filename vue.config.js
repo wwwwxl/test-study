@@ -4,4 +4,13 @@ module.exports = defineConfig({
   // 关闭eslint语法验证
   lintOnSave: false,
   devServer: {},
+  css: {
+    extract: false,
+    sourceMap: true, // 开启 CSS source maps?
+    loaderOptions:{
+      less:{
+        javascriptEnabled: true
+      }
+    }
+  }
 });
