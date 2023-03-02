@@ -20,8 +20,8 @@ export default {
        * :include="['a', 'b']"
        */
       max: 3,
-			includeList: /\/(detail)$/, // 页面结尾/detail
-      excludeList: []
+			includeList: ['loginRegister'], // 页面结尾loginRegister
+      excludeList: ['layoutHome'] // 优先级高
 		}
 	}
 }

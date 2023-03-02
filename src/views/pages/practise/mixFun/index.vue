@@ -11,7 +11,7 @@ import homeView from "@/mixins/homeView";
 
 export default {
   routesMeta: {
-			title: '首页',
+			title: 'minxis学习',
 			keepAlive: true
 	},
   components: {

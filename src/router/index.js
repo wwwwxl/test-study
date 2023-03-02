@@ -4,6 +4,12 @@ import VueRouter from "vue-router";
 // import About from "../views/aboutView/index.vue"
 
 import routes from './routes'
+
+// 忽略跳转到同一页面报错
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
 Vue.use(VueRouter);
 
 // const routes = [

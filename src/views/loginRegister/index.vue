@@ -7,7 +7,7 @@
 <script>
 import LoginForm from './LoginForm/LoginForm.vue'
 export default {
-	metaTitle: '登录注册',
+	name: "loginRegister",
 	routesMeta: {
 		title: '登录注册',
 		keepAlive: true,

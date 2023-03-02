@@ -24,7 +24,7 @@
 <script>
 	export default{
 		routesMeta: {
-			title: '关于',
+			title: '描点学习',
 			keepAlive: true
 		},
 		data() {

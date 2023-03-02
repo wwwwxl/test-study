@@ -82,4 +82,6 @@ Vue.use(Form);
 Vue.use(Input);
 Vue.use(Icon);
 Vue.use(Menu);
+Vue.use(Result);
+Vue.use(Table);
 Vue.prototype.$message = message;

@@ -20,6 +20,9 @@ Vue.use(say)
 // ant-design-vue按需引入
 import '@/components/antDesign.js'
 
+// 引用mock
+require('./mock');
+
 new Vue({
   router,
   store,
