@@ -45,8 +45,10 @@ npm install mockjs
 
 # 安装axios
 npm install axios
-#增加一个loading组件方法调用
 
+# 自定义一个loading加载框并通过方法调用涉及vue.use和vue.prototype以及vue实例渲染挂载知识
+# 知识找寻处，有道云笔记，github项目test-study, vue-ant-pinia
 
 # // 动态路由需注意路由跳转,需要保证动态路由和跳转的路由相匹配
 
+# //增加一个loading组件方法调用，数据请求调用方法 动态路由,数据请求，增删改查

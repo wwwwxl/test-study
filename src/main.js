@@ -23,6 +23,14 @@ import '@/components/antDesign.js'
 // 引用mock
 require('./mock');
 
+// 引用自定义loading
+import loading from "@/components/AntLoading/loading.js"
+Vue.use(loading)
+
+// 使用自定义axios
+import service from "@/api/axios"
+Vue.prototype.$serviceReq = service
+
 new Vue({
   router,
   store,

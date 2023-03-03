@@ -25,6 +25,6 @@ export default {
 }
 </script>
 <style>
-.btn-box{ margin-top: 1.6rem;
+.btn-box{ margin-top: 0.6rem;
 }
 </style>

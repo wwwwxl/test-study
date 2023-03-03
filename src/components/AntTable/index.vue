@@ -1,24 +1,10 @@
 <template>
-	<a-table
-		:columns="tableColumns"
-		:data-source="tableData"
-		:bordered="bordered"
-		:loading="tableLoading"
-		:row-selection="rowSelection"
-		:row-key="rowKey"
-		:scroll="scroll"
-		:pagination="pagePaginations"
-		@change="tableOPeraFun"
-	>
-		<template
-			v-for="col in tableColumns"
-			:slot="col.scopedSlots ? col.scopedSlots.customRender : ''"
-			slot-scope="text, record"
-		>
-			<slot
-				:name="col.scopedSlots ? col.scopedSlots.customRender : ''"
-				v-bind="record"
-			/>
+	<a-table :columns="tableColumns" :data-source="tableData" :bordered="bordered" :loading="tableLoading"
+		:row-selection="rowSelection" :row-key="rowKey" :scroll="scroll" :pagination="pagePaginations"
+		@change="tableOPeraFun">
+		<template v-for="col in tableColumns" :slot="col.scopedSlots ? col.scopedSlots.customRender : ''"
+			slot-scope="text, record">
+			<slot :name="col.scopedSlots ? col.scopedSlots.customRender : ''" v-bind="record" />
 		</template>
 	</a-table>
 </template>
@@ -54,7 +40,7 @@ export default {
 		},
 		scroll: {
 			type: Object,
-			default: () => {},
+			default: () => { },
 		}, // 主键
 		rowKey: {
 			type: String,
@@ -75,18 +61,18 @@ export default {
 	},
 	watch: {
 		paginations: {
-			handler(val, oldVal) {
+			handler (val, oldVal) {
 				this.pagePaginations = Object.assign(this.pagePaginations, val)
 			},
 			deep: true,
 		},
 	},
-	data() {
+	data () {
 		return {
 			pagePaginations: paginations,
 		}
 	},
-	created() {
+	created () {
 		this.pagePaginations = Object.assign(
 			this.pagePaginations,
 			this.paginations
@@ -94,7 +80,7 @@ export default {
 	},
 	methods: {
 		// 分页、排序、筛选变化时触发
-		tableOPeraFun(pagination, filters, sorter, { currentDataSource }) {
+		tableOPeraFun (pagination, filters, sorter, { currentDataSource }) {
 			this.$emit('tableOPeraFun', pagination, filters, sorter, {
 				currentDataSource,
 			})

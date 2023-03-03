@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div name="appVue" id="app">
     <div class="container" ref="containerRef">
       <keep-alive :include="includeList" :exclude="excludeList" :max="max">
         <router-view />
