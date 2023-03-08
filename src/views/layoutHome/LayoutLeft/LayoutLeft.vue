@@ -117,6 +117,13 @@ export default {
 					iconName: 'pie-chart',
 					children: [
 						{
+							id: 100400,
+							title: '表单',
+							iconName: 'unordered-list',
+							name: 'practiseFormUse',
+							path: '/practise/formUse',
+						},
+						{
 							id: 100401,
 							title: '描点跳转',
 							iconName: 'unordered-list',

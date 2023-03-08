@@ -94,4 +94,7 @@ Vue.use(Switch);
 Vue.use(Space);
 Vue.use(Divider);
 Vue.use(Dropdown);
+Vue.use(Popconfirm);
+Vue.use(Modal);
+Vue.use(TreeSelect);
 Vue.prototype.$message = message;

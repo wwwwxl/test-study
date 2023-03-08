@@ -26,5 +26,6 @@ export default {
     justify-content: center;
     background-color: #333;
     opacity: 0.7;
+    z-index: 999;
 }
 </style>

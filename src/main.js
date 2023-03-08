@@ -21,7 +21,7 @@ Vue.use(say)
 import '@/components/antDesign.js'
 
 // 引用mock
-require('./mock');
+require('./mock/index.js');
 
 // 引用自定义loading
 import loading from "@/components/AntLoading/loading.js"
@@ -30,6 +30,14 @@ Vue.use(loading)
 // 使用自定义axios
 import service from "@/api/axios"
 Vue.prototype.$serviceReq = service
+// axios使用
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+
+import _lodash from 'lodash'
+Vue.prototype.$_lodash = _lodash
+
 
 new Vue({
   router,

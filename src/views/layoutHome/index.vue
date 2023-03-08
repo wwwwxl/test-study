@@ -39,7 +39,7 @@ export default {
 			// 4.包含在 keep-alive 中，但符合 exclude ，不会调用 activated 和 deactivated。
 			max: 3,
 			// includeList: ['403','404','500','userDetail'], // 页面
-			includeList: /403|404|500|userDetail/, // 精准匹配没有模糊匹配
+			includeList: /noAuth|notFound|errorStatus|userDetail/, // 精准匹配没有模糊匹配
 			excludeList: [],
 		}
 	},

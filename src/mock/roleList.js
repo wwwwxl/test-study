@@ -1,7 +1,7 @@
 let list = {
     data: {
-        total: 100,
-        'rows|100': [
+        total: 30,
+        'rows|20': [
             {
                 roleId: '@id',
                 roleName: '@name',

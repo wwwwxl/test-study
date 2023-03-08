@@ -2,8 +2,8 @@ let demoList = {
     // status: 200,
     // message: 'success',
     data: {
-      total: 100,
-      'rows|100': [{
+      total: 20,
+      'rows|10': [{
         id: '@guid',
         name: '@cname',
         'age|20-30': 23,
@@ -12,5 +12,5 @@ let demoList = {
     }
   };
   export default {
-      'get|/demoList': demoList
+      'get|/testStudy/service/demoList': demoList
   }

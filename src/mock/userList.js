@@ -1,7 +1,9 @@
+// 首先引入Mock
+const Mock = require('mockjs');
 let list = {
     data: {
-        total: 100,
-        'rows|100':[
+        total: 30,
+        'rows|30':[
             {
                 userId: '@id',
                 userName: '@name',
@@ -22,5 +24,5 @@ let list = {
     }
 }
 export default {
-    'get|/testStudy/service/user': list
+    'get|/testStudy/service/userList': list
 }

@@ -1,4 +1,6 @@
 <script>
+import { resolve } from 'path'
+
 export default {
   props: {
     // form表单属性传参可修改
@@ -16,6 +18,13 @@ export default {
       required: true,
       default: function() {
         return []
+      }
+    },
+    // 是否需要操作按钮
+    isNeedOperaBtn: {
+      type: Boolean,
+      default: function() {
+        return true
       }
     }
   },
@@ -385,12 +394,29 @@ export default {
     // 生成日期选择框
     // 确认提交函数
     handleSubmit(e) {
-      e.preventDefault()
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          console.log('Received values of form: ', values)
-        }
+      if(e) {
+        e.preventDefault()
+      }
+      return new Promise((resolve,reject)=>{
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            console.log('Received values of form: ', values)
+            resolve(values)
+          }
+        })
       })
+    },
+    // 重置表单
+    resetSubmitData() {
+      this.form.resetFields()
+    },
+    // 给生成得表单赋初始值
+    setFieldsValueFun(item) {
+      if(!item) {
+        return 
+      }
+      // { [fieldName]: value }
+      this.form.setFieldsValue(item)
     }
   },
   // 注意事项：每一次data数据的改变都会重新渲染
@@ -401,7 +427,7 @@ export default {
     // 获取表单参数项
     const formParams = Object.assign(this.formParams, this.formParamsProps)
     // 参数解构
-    const { hideRequiredMark, labelAlign, layout } = formParams
+    const { hideRequiredMark=false, labelAlign, layout } = formParams
     // 表单布局,当模式在horizontal 表单排版有效
     const { labelCol, wrapperCol } = this.formLayout()
 
@@ -409,6 +435,8 @@ export default {
     const formItemFirst = this.formItemList[0]
     const buttonItemLayoutRes = this.buttonItemLayout(formItemFirst?.labelCol, formItemFirst?.wrapperCol)
 
+    // Vue对于插槽有两个专门的APIvm.$slots和vm.$scopedSlots，分别是普通插槽和作用域插槽，
+    // 使用JSX语法或渲染函数的时候，定义插槽将使用上述两个API。
     const formInput = (
       <a-form
         form={this.form}
@@ -419,14 +447,27 @@ export default {
         wrapper-col={wrapperCol}
         onSubmit={this.handleSubmit}
       >
+        {/* 头部插槽 */}
+        {this.$slots.formItemHeader}
+
         {/* 生成表单项 */}
         {this.combineFormItem()}
 
-        <a-form-item label-col={buttonItemLayoutRes.labelCol} wrapper-col={buttonItemLayoutRes.wrapperCol}>
-          <a-button type="primary" html-type="submit">
-            查询
-          </a-button>
-        </a-form-item>
+        {/* 尾部插槽 */}
+        {this.$slots.formItemFooter}
+
+        {this.isNeedOperaBtn? (
+          <a-form-item label-col={buttonItemLayoutRes.labelCol} wrapper-col={buttonItemLayoutRes.wrapperCol}>
+            <a-space>
+              <a-button type="primary" html-type="submit">
+                查询
+              </a-button>
+              <a-button onClick={this.resetSubmitData}>重置</a-button>
+              <slot name="btnGroup"></slot>
+            </a-space>
+          </a-form-item>
+        ):''}
+        
       </a-form>
     )
     return <div>{formInput}</div>

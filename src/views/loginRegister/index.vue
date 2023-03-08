@@ -6,6 +6,9 @@
 
 <script>
 import LoginForm from './LoginForm/LoginForm.vue'
+import {
+	loginUserUrl
+} from "@/api/reqUrl"
 export default {
 	name: "loginRegister",
 	routesMeta: {
@@ -20,9 +23,12 @@ export default {
 	},
 	methods: {
 		toLogin(values) {
-			console.log('Received values of form: ', values)
-			this.$router.push({
-				name: 'layoutHome'
+			// console.log('Received values of form: ', values)
+			this.$serviceReq.get(loginUserUrl).then((res)=>{
+				console.log("res===", res)
+				this.$router.push({
+					name: 'layoutHome'
+				})
 			})
 		},
 	},

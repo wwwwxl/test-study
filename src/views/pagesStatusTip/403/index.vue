@@ -9,7 +9,7 @@
   </template>
   <script>
   export default {
-    name: '403',
+    name: 'noAuth',
     data() {
       return {};
     },

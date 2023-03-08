@@ -28,6 +28,7 @@ files.keys().forEach((key) => {
 configArray.forEach((item) => {
   for (let [path, target] of Object.entries(item)) {
     let protocol = path.split('|');
-    Mock.mock(new RegExp('^' + protocol[1]), protocol[0], builder(target));// 请求路径，方法，数据
+    let transData = builder(target.data)
+    Mock.mock(new RegExp('^' + protocol[1]), protocol[0], transData);// 请求路径，方法，数据
   }
 });

@@ -1,9 +1,3 @@
-const responseBody = {
-    message: '',
-    timestamp: 0,
-    result: null,
-    code: 0
-}
 /**
  * builder 构建响应体
  * @params data
@@ -13,6 +7,14 @@ const responseBody = {
  * @return object
  */
 export const builder = (data, message="请求成功", code = 0, headers = {}) => {
+    // 注意responseBody不能是全局变量。每次进入重新定义一个。如果是全局的最后一个将会覆盖之前的。导致意料之外的错误
+    const responseBody = {
+        message: '',
+        timestamp: 0,
+        result: null,
+        code: 0,
+        status: 200
+    }
     responseBody.result = data
     if (message !== undefined && message !== null) {
         responseBody.message = message

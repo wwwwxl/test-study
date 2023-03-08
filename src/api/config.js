@@ -1,4 +1,4 @@
-const baseUrl = "testStudy/service"
+const baseUrl = "/testStudy/service"
 export default{
     baseUrl
 }

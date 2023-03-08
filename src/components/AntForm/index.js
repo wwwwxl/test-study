@@ -19,7 +19,8 @@ let data = {
           label: '姓名',
           // 输入框属性
           type: 'input',
-          decorator: ['userName', { initialValue: '你大爷' }, { rules: [{ required: true, message: '请输入姓名!' }] }],
+          // decorator: ['userName', { initialValue: '你大爷' }, { rules: [{ required: true, message: '请输入姓名!' }] }],
+          decorator: ['userName', { rules: [{ required: true, message: '请输入姓名!' }] }], // 不设初始值显示必填提示
           placeholder: '请输入姓名',
           min: 0,
           maxLength: 100,

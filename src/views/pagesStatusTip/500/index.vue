@@ -9,7 +9,7 @@
   </template>
   <script>
   export default {
-    name: '500',
+    name: 'errorStatus',
     data() {
       return {};
     },

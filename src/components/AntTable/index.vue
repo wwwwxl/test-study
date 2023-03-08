@@ -11,6 +11,7 @@
 <script>
 let paginations = {
 	current: 1,
+	pageSize: 10,
 	total: 0,
 	showSizeChanger: true,
 	showQuickJumper: true,
@@ -55,7 +56,7 @@ export default {
 		paginations: {
 			type: Object,
 			default: function () {
-				return paginations
+				return {...paginations}
 			},
 		},
 	},
@@ -69,7 +70,7 @@ export default {
 	},
 	data () {
 		return {
-			pagePaginations: paginations,
+			pagePaginations: {...paginations},
 		}
 	},
 	created () {
